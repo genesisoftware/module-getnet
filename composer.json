@@ -1,0 +1,19 @@
+{
+    "name": "genesisoft/module-getnet",
+    "description": "",
+    "require": {
+        "magento/magento-composer-installer": "*"
+    },
+    "suggest": {
+    },
+    "type": "magento2-module",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "FCamara\\Getnet\\": ""
+        }
+    }
+}

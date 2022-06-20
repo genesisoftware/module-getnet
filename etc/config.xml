@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <getnet_billet>
+                <debug>1</debug>
+                <active>0</active>
+                <model>GetnetGatewayBilletFacade</model>
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <title>Getnet Boleto</title>
+                <currency>BRL</currency>
+                <our_number>000000000</our_number>
+                <expiration_days>2</expiration_days>
+                <instructions>Não receber após o vencimento</instructions>
+                <can_authorize>1</can_authorize>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <sort_order>2</sort_order>
+            </getnet_billet>
+            <getnet_credit_card>
+                <debug>1</debug>
+                <active>0</active>
+                <cvv_enabled>1</cvv_enabled>
+                <model>GetnetGatewayCreditCardFacade</model>
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <use_pre_authorization>1</use_pre_authorization>
+                <cctypes>AE,VI,MC,DI,JCB,DN</cctypes>
+                <title>Getnet Credit Card</title>
+                <currency>BRL</currency>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <installments>INSTALL_NO_INTEREST</installments>
+                <sort_order>1</sort_order>
+            </getnet_credit_card>
+ <!--           <getnet_debit_card>
+                <debug>1</debug>
+                <active>0</active>
+                <cvv_enabled>1</cvv_enabled>
+                <model>GetnetGatewayDebitCardFacade</model>
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <cctypes>AE,VI,MC,DI,JCB,DN</cctypes>
+                <title>Getnet Debit Card</title>
+                <currency>BRL</currency>
+                <can_authorize>1</can_authorize>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <sort_order>1</sort_order>
+            </getnet_debit_card> -->
+            <getnet_checkout_iframe>
+                <active>0</active>
+                <model>FCamara\Getnet\Model\CheckoutIframe</model>
+                <order_status>processing</order_status>
+                <title>Getnet Checkout Iframe</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </getnet_checkout_iframe>
+        </payment>
+    </default>
+</config>
